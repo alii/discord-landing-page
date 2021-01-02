@@ -27,7 +27,7 @@ export default function Home(props: HomeProps) {
           height={75}
           width={75}
           loading="eager"
-          className="rounded-full"
+          className="rounded-full shadow-sm"
           alt={`Discord server icon of ${props.guild.name}`}
         />
       </div>
