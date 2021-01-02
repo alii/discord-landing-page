@@ -8,11 +8,7 @@ export function Card({
   title: string;
 }) {
   const content = (
-    <div
-      className={`${
-        href ? "" : " p-5 "
-      } flex items-center justify-center bg-gray-50 rounded-md`}
-    >
+    <div className="p-5 flex items-center justify-center bg-gray-50 rounded-md flex-1 hover:bg-gray-100">
       <div
         style={{ height: 20, width: 20 }}
         className="bg-indigo-300 rounded-full animate-pulse"
@@ -28,10 +24,7 @@ export function Card({
 
   if (href) {
     return (
-      <a
-        className="flex items-center justify-center p-5 bg-gray-50"
-        href={href}
-      >
+      <a className="flex items-center justify-center" href={href}>
         {content}
       </a>
     );
