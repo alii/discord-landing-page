@@ -59,8 +59,8 @@ export default function Home(props: HomeProps) {
           href="https://twitch.tv/twitch"
         />
         <Card
-          description="Another card"
-          title="Do something here"
+          description="Do something here"
+          title="Another card"
           href="https://example.com"
         />
       </div>
