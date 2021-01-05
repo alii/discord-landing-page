@@ -1,17 +1,17 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { millify } from "millify";
-import { Discord } from "../utils/types";
-import { DiscordClient } from "../utils/DiscordClient";
+import { DiscordClient, PartialGuild } from "../utils/DiscordClient";
 import { Card } from "../components/Card";
 import { config } from "../utils/config";
+import { APIGuild } from "discord-api-types/v8";
 
-type HomeProps = { guild: Discord.Guild };
+type HomeProps = { guild: APIGuild | PartialGuild };
 
 const client = new DiscordClient(config.bot_token);
 
 export default function Home(props: HomeProps) {
-  const memberCount = millify(props.guild.approximate_member_count, {
+  const memberCount = millify(props.guild.approximate_member_count!, {
     lowercase: true,
     precision: 1,
   });
@@ -23,7 +23,7 @@ export default function Home(props: HomeProps) {
       </Head>
       <div className="flex items-center justify-center mb-5 block">
         <img
-          src={`https://cdn.discordapp.com/icons/${config.guild_id}/${props.guild.icon}?size=256`}
+          src={`https://cdn.discordapp.com/icons/${props.guild.id}/${props.guild.icon}.png?size=256`}
           height={75}
           width={75}
           loading="eager"
@@ -69,7 +69,8 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const guild = await client.getGuild(config.guild_id);
+  console.log(config);
+  const guild = await client.getGuild(config.guild_id || config.guild_invite);
 
   return {
     props: { guild },
