@@ -2,7 +2,8 @@
 
 A minimal, easy-to-use landing page template for Discord servers.
 
-This requires three environment variables, `TOKEN`, `GUILD` and `INVITE`. The token is the bot token of a bot in the guild, the guild is the ID of the guild you want to use, and the invite is a discord invite link.
+This requires one environment variables, `INVITE`. The `TOKEN` and `GUILD` environment variables are not required, but recommended.  
+`TOKEN` is the bot token of a bot in the guild, `GUILD` is the ID of the guild you want to use, and `INVITE` is a Discord invite link.
 
 You can deploy very easily to vercel with the link below, or check out [the demo here](https://discord-landing-page.vercel.app/).
 
