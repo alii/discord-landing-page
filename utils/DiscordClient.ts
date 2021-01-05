@@ -12,8 +12,6 @@ export class DiscordClient {
   ) {}
 
   async getGuild(idOrInvite: string): Promise<APIGuild | PartialGuild> {
-    console.log(idOrInvite);
-
     if (this.token) {
       return fetch(`${this.api_base}/guilds/${idOrInvite}?with_counts=true`, {
         headers: { Authorization: `Bot ${this.token}` },
