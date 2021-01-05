@@ -19,6 +19,7 @@
     "@types/node-fetch": "^2.5.7",
     "@types/react": "^17.0.0",
     "autoprefixer": "^10.1.0",
+    "discord-api-types": "^0.12.1",
     "postcss": "^8.2.1",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.2",
