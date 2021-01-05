@@ -69,7 +69,6 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  console.log(config);
   const guild = await client.getGuild(config.guild_id || config.guild_invite);
 
   return {
